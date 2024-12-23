@@ -39,9 +39,11 @@ def check_arg(args: argparse.Namespace) -> bool:
     return True
 
 
-def check(args: argparse.Namespace) -> None:
+def check(args: argparse.Namespace):
     if not check_network():
         print("网络连接失败，程序终止。")
         sys.exit(1)
     if not check_arg(args):
         sys.exit(1)
+
+    return 1
